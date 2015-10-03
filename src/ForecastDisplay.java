@@ -27,9 +27,36 @@ public class ForecastDisplay implements Observer, DisplayElement {
 	}
 	
 	public void display() {
-		System.out.println("Last conditions: " + lastTemperature 
-			+ "F degrees and " + lastHumidity + "% humidity");
-		System.out.println("Current conditions: " + currentTemperature 
-				+ "F degrees and " + currentHumidity + "% humidity");
+		System.out.print("( Temperature : ");
+		if(lastTemperature < currentTemperature){
+			System.out.print(" up ");
+		}
+		else if(lastTemperature == currentTemperature){
+			System.out.print("same");
+		}
+		else if(lastTemperature > currentTemperature){
+			System.out.print("down");
+		}
+		System.out.print(" | Humidity : ");
+		if(lastHumidity < currentHumidity){
+			System.out.print(" up ");
+		}
+		else if(lastHumidity == currentHumidity){
+			System.out.print("same");
+		}
+		else if(lastHumidity > currentHumidity){
+			System.out.print("down");
+		}
+		System.out.print(" | Pressure : ");
+		if(lastPressure < currentPressure){
+			System.out.print(" up ");
+		}
+		else if(lastPressure == currentPressure){
+			System.out.print("same");
+		}
+		else if(lastPressure > currentPressure){
+			System.out.print("down");
+		}
+		System.out.println(" )");
 	}
 }

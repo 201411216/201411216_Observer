@@ -13,7 +13,6 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 		weatherData.registerObserver(this);
 	}
 
-	@Override
 	public void display() {
 		float sumTemperature = 0;
 		float sumHumidity = 0;
@@ -32,11 +31,10 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 		float avgHumidity = sumHumidity / count;
 		float avgPressure = sumPressure / count;
 
-		System.out.println("Statistics conditions: " + avgTemperature
+		System.out.println("Average conditions: " + avgTemperature
 				+ "F degrees and " + avgHumidity + "% humidity");
 	}
 
-	@Override
 	public void update(float temp, float humidity, float pressure) {
 		temperatures.add(temp);
 		humidities.add(humidity);
